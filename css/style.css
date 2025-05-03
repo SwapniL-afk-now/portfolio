@@ -1,0 +1,183 @@
+/* ==== Google Fonts ==== */
+/* Included via <link> in HTML head, defined here for use */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .fw-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Ensure bold weights are loaded if used */
+}
+
+/* ==== CSS Variables for Theming ==== */
+/* Define your color palette and other theme settings here */
+:root {
+    --primary-color: #0d6efd; /* Default Bootstrap Blue - CHANGE ME */
+    --secondary-color: #6c757d; /* Default Bootstrap Gray - CHANGE ME */
+    --light-color: #f8f9fa; /* Default Bootstrap Light Gray - CHANGE ME */
+    --dark-color: #212529; /* Default Bootstrap Dark Gray - CHANGE ME */
+    --hero-bg-color: #343a40; /* Dark background for hero */
+    --hero-text-color: #ffffff;
+    --navbar-bg: rgba(33, 37, 41, 0.9); /* Slightly transparent dark navbar */
+    --link-hover-color: #0a58ca; /* Slightly darker blue on hover */
+
+    --bs-primary: var(--primary-color); /* Override Bootstrap primary color */
+    --bs-secondary: var(--secondary-color);
+    --bs-light: var(--light-color);
+    --bs-dark: var(--dark-color);
+    /* Add more overrides if needed (e.g., --bs-body-font-family) */
+
+    scroll-padding-top: 80px; /* Adjust based on your fixed navbar height */
+}
+
+/* ==== General Styles ==== */
+section {
+    scroll-margin-top: 80px; /* Offset for fixed navbar when scrolling */
+}
+
+/* ==== Navbar ==== */
+.navbar {
+    background-color: var(--navbar-bg);
+    transition: background-color 0.3s ease;
+}
+.navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.navbar .nav-link {
+    font-weight: 600; /* Slightly bolder nav links */
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+    transition: color 0.3s ease;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--primary-color) !important; /* Use !important sparingly to override Bootstrap */
+}
+
+/* ==== Hero Section ==== */
+#hero {
+    min-height: 100vh; /* Full viewport height */
+    background-color: var(--hero-bg-color);
+    color: var(--hero-text-color);
+    /* Optional: Add a background image */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/hero-bg.jpg') no-repeat center center/cover; */
+}
+
+#hero h1 {
+    color: var(--primary-color); /* Make heading stand out */
+}
+
+#hero .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+}
+#hero .btn-primary:hover {
+    background-color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
+}
+
+#hero .btn-outline-light {
+     padding: 0.8rem 2rem;
+     font-weight: 600;
+}
+
+
+/* ==== About Section ==== */
+#about img {
+    max-width: 100%; /* Ensure image is responsive */
+    border: 5px solid var(--light-color);
+}
+#about .social-icons a {
+    transition: color 0.3s ease;
+}
+#about .social-icons a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* ==== Skills Section ==== */
+#skills .card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#skills .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+#skills .card i {
+    transition: color 0.3s ease;
+}
+#skills .card:hover i {
+     color: var(--link-hover-color) !important; /* Make icon color change on card hover */
+}
+#skills ul {
+    padding-left: 0; /* Remove default padding */
+    margin-top: 1rem;
+}
+#skills li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* ==== Projects Section ==== */
+.project-card {
+    overflow: hidden; /* Ensure image zoom doesn't break layout */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.project-card img {
+    transition: transform 0.4s ease;
+}
+.project-card:hover img {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+.project-card .badge {
+    font-size: 0.75rem;
+    padding: 0.4em 0.6em;
+}
+
+
+/* ==== Contact Section ==== */
+#contact form {
+    border: 1px solid #dee2e6; /* Light border for the form */
+}
+#contact .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25); /* Use Bootstrap's focus style */
+}
+
+
+/* ==== Footer ==== */
+/* Styles already inherited or set by Bootstrap utilities */
+
+
+/* ==== Utility Classes (Optional Additions) ==== */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* ==== Media Queries for Responsiveness (Bootstrap handles most, add custom ones if needed) ==== */
+@media (max-width: 991.98px) {
+    :root {
+        scroll-padding-top: 60px; /* Adjust for smaller navbar */
+    }
+    section {
+        scroll-margin-top: 60px;
+    }
+    #hero {
+        min-height: auto; /* Adjust hero height on smaller screens */
+        padding-top: 120px; /* Add padding because navbar is fixed */
+        padding-bottom: 60px;
+    }
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero h2 {
+        font-size: 1.25rem;
+    }
+}
