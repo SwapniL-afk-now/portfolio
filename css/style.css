@@ -67,7 +67,7 @@ section {
 #hero {
     min-height: 100vh; /* Full viewport height */
     /* === IMPORTANT: REPLACE WITH YOUR BACKGROUND IMAGE PATH === */
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../assets/images/your-profile-background.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../assets/images/swapnil_profile.jpg') no-repeat center center/cover;
     color: var(--hero-text-color, #ffffff); /* Default to white text */
     position: relative; /* For positioning decorative arrows */
     overflow: hidden; /* Prevent content spill if arrows are too large */
