@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .fw-bold {
     --secondary-color: #6c757d; /* Default Bootstrap Gray - CHANGE ME */
     --light-color: #f8f9fa; /* Default Bootstrap Light Gray - CHANGE ME */
     --dark-color: #212529; /* Default Bootstrap Dark Gray - CHANGE ME */
-    --hero-bg-color: #343a40; /* Dark background for hero */
+    /* --hero-bg-color: #343a40; /* No longer primary for hero bg, image used */
     --hero-text-color: #ffffff;
     --navbar-bg: rgba(33, 37, 41, 0.9); /* Slightly transparent dark navbar */
     --navbar-scrolled-bg: var(--dark-color); /* Opaque dark navbar on scroll */
@@ -63,34 +63,116 @@ section {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-
 /* ==== Hero Section ==== */
 #hero {
     min-height: 100vh; /* Full viewport height */
-    background-color: var(--hero-bg-color);
-    color: var(--hero-text-color);
-    /* Optional: Add a background image */
-    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/hero-bg.jpg') no-repeat center center/cover; */
+    /* === IMPORTANT: REPLACE WITH YOUR BACKGROUND IMAGE PATH === */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../assets/images/swapnil_profile.jpg') no-repeat center center/cover;
+    color: var(--hero-text-color, #ffffff); /* Default to white text */
+    position: relative; /* For positioning decorative arrows */
+    overflow: hidden; /* Prevent content spill if arrows are too large */
+    display: flex; /* To align content vertically and horizontally */
+    align-items: center; /* Vertical centering */
+    text-align: center; /* Horizontal centering for inner content */
 }
 
-#hero h1 {
-    color: var(--primary-color); /* Make heading stand out */
+#hero .container {
+    position: relative; /* To keep content above pseudo-elements if any */
+    z-index: 2;
+}
+
+#hero .hero-title {
+    font-size: 4rem; /* Large main title */
+    line-height: 1.2;
+    color: #fff; /* Ensure it's white if not overridden by --hero-text-color */
+    margin-bottom: 0.5rem; /* Adjusted margin */
+}
+
+#hero .hero-highlight {
+    display: block; /* Makes "Hello" appear on its own line or more distinct */
+    font-size: 0.8em; /* Slightly smaller than the name */
+    font-weight: 700; /* Can be lighter or same */
+    color: var(--primary-color); /* Use your primary color for highlight */
+    margin-bottom: 0.3em; /* Adjusted margin */
+}
+
+#hero .hero-subtitle {
+    font-size: 1.75rem;
+    font-weight: 300; /* Lighter font weight for subtitle */
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem !important;
+}
+
+#hero .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 650px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem !important; /* Added more space before buttons */
+}
+
+#hero .hero-actions .btn {
+    padding: 0.8rem 2.5rem; /* Generous padding for buttons */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-radius: 50px; /* Pill-shaped buttons like example */
 }
 
 #hero .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    padding: 0.8rem 2rem;
-    font-weight: 600;
 }
 #hero .btn-primary:hover {
-    background-color: var(--link-hover-color);
+    background-color: var(--link-hover-color); /* Defined in your :root */
     border-color: var(--link-hover-color);
 }
 
 #hero .btn-outline-light {
-     padding: 0.8rem 2rem;
-     font-weight: 600;
+    border-width: 2px; /* Make outline more prominent */
+    color: var(--hero-text-color, #ffffff);
+}
+#hero .btn-outline-light:hover {
+    background-color: var(--hero-text-color, #ffffff);
+    color: var(--dark-color); /* Text color changes to dark on hover */
+}
+
+#hero .hero-email {
+    margin-top: 2.5rem !important;
+}
+#hero .hero-email a {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+#hero .hero-email a:hover {
+    color: var(--hero-text-color, #ffffff);
+}
+
+/* Decorative Arrows */
+.hero-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: rgba(255, 255, 255, 0.4); /* Subtle color */
+    padding: 0.5rem 1rem;
+    z-index: 5; /* Above background, below main content if needed */
+    cursor: default; /* They are not interactive here */
+    transition: color 0.3s ease;
+}
+.hero-nav-arrow:hover {
+    color: rgba(255, 255, 255, 0.7); /* Slightly more visible on hover */
+}
+.hero-nav-left {
+    left: 20px;
+}
+.hero-nav-right {
+    right: 20px;
 }
 
 
@@ -190,15 +272,64 @@ section {
     section {
         scroll-margin-top: 60px;
     }
+    #hero { /* Remove fixed height for hero on smaller screens, allow content to dictate */
+        min-height: auto;
+        padding-top: 120px; /* Ensure space for fixed navbar */
+        padding-bottom: 80px;
+    }
+    #hero .hero-title {
+        font-size: 3rem;
+    }
+    #hero .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    #hero .hero-description {
+        font-size: 1rem;
+    }
+    .hero-nav-arrow { /* Make arrows smaller */
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero .hero-title {
+        font-size: 2.5rem; /* Further reduce title size */
+    }
+     #hero .hero-highlight {
+        font-size: 0.75em;
+    }
+    #hero .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    #hero .hero-actions .btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.85rem;
+        width: 100%; /* Stack buttons */
+        margin-bottom: 1rem !important; /* Ensure proper spacing when stacked */
+    }
+    #hero .hero-actions .btn.me-md-3 { /* Remove right margin when stacked */
+        margin-right: 0 !important;
+    }
+     .hero-nav-arrow { /* Optionally hide arrows on smaller mobile */
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
     #hero {
-        min-height: auto; /* Adjust hero height on smaller screens */
-        padding-top: 120px; /* Add padding because navbar is fixed */
+        padding-top: 100px;
         padding-bottom: 60px;
     }
-    #hero h1 {
-        font-size: 2.5rem;
+    #hero .hero-title {
+        font-size: 2.2rem;
     }
-    #hero h2 {
-        font-size: 1.25rem;
+     #hero .hero-highlight {
+        font-size: 0.7em;
+    }
+    #hero .hero-subtitle {
+        font-size: 1.1rem;
+    }
+     #hero .hero-description {
+        font-size: 0.95rem;
     }
 }
