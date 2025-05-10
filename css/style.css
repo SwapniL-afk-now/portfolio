@@ -12,19 +12,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .fw-bold {
 /* ==== CSS Variables for Theming ==== */
 /* Define your color palette and other theme settings here */
 :root {
-    --primary-color: #0d6efd; /* Default Bootstrap Blue - Can be used for CTA or general accent */
-    --secondary-color: #6c757d; /* Default Bootstrap Gray */
-    --light-color: #f8f9fa; /* Default Bootstrap Light Gray */
-    --dark-color: #212529; /* Default Bootstrap Dark Gray */
-
-    --hero-bg: #121212; /* Very dark background for hero, as per example */
+    --primary-color: #0d6efd; /* Default Bootstrap Blue - CHANGE ME */
+    --secondary-color: #6c757d; /* Default Bootstrap Gray - CHANGE ME */
+    --light-color: #f8f9fa; /* Default Bootstrap Light Gray - CHANGE ME */
+    --dark-color: #212529; /* Default Bootstrap Dark Gray - CHANGE ME */
+    /* --hero-bg-color: #343a40; /* No longer primary for hero bg, image used */
     --hero-text-color: #ffffff;
-    --hero-accent-color: #FF4D4D; /* Example: A reddish-orange for pre-header & button, like in the sample */
-
-    --navbar-bg: rgba(18, 18, 18, 0.85); /* Darker, slightly transparent navbar to match hero */
-    --navbar-scrolled-bg: #0c0c0c; /* Even darker opaque navbar on scroll */
-    --link-hover-color: color-mix(in srgb, var(--primary-color) 80%, black); /* Slightly darker blue on hover */
-
+    --navbar-bg: rgba(33, 37, 41, 0.9); /* Slightly transparent dark navbar */
+    --navbar-scrolled-bg: var(--dark-color); /* Opaque dark navbar on scroll */
+    --link-hover-color: #0a58ca; /* Slightly darker blue on hover */
 
     --bs-primary: var(--primary-color); /* Override Bootstrap primary color */
     --bs-secondary: var(--secondary-color);
@@ -43,141 +39,140 @@ section {
 /* ==== Navbar ==== */
 .navbar {
     background-color: var(--navbar-bg);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border for dark navbar */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
 }
 .navbar .navbar-brand {
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--hero-text-color);
 }
 .navbar .nav-link {
-    font-weight: 500; /* Slightly less bold for a sleeker look */
+    font-weight: 600; /* Slightly bolder nav links */
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     padding: 0.8rem 1rem;
-    color: rgba(255, 255, 255, 0.75); /* Lighter nav links */
     transition: color 0.3s ease;
 }
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-    color: var(--hero-accent-color) !important; /* Use hero accent for active/hover */
+    color: var(--primary-color) !important; /* Use !important sparingly to override Bootstrap */
 }
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
 
 /* Style for navbar when scrolled */
 .navbar-scrolled {
-    background-color: var(--navbar-scrolled-bg);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    background-color: var(--navbar-scrolled-bg); /* Make it fully opaque on scroll */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* ==== Hero Section ==== */
 #hero {
-    min-height: 100vh;
-    background-color: var(--hero-bg, #121212); /* Very dark background */
-    color: var(--hero-text-color, #ffffff);
-    padding-top: 100px; /* Space for navbar + some breathing room */
-    padding-bottom: 60px;
-    overflow: hidden; /* Prevent image overflow issues */
-    display: flex; /* To use align-items-center from Bootstrap */
+    min-height: 100vh; /* Full viewport height */
+    /* === IMPORTANT: REPLACE WITH YOUR BACKGROUND IMAGE PATH === */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../assets/images/your-profile-background.jpg') no-repeat center center/cover;
+    color: var(--hero-text-color, #ffffff); /* Default to white text */
+    position: relative; /* For positioning decorative arrows */
+    overflow: hidden; /* Prevent content spill if arrows are too large */
+    display: flex; /* To align content vertically and horizontally */
+    align-items: center; /* Vertical centering */
+    text-align: center; /* Horizontal centering for inner content */
 }
 
-.hero-text-column {
-    text-align: left;
-    z-index: 2; /* Ensure text is above any potential pseudo-elements */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center text content within its column */
+#hero .container {
+    position: relative; /* To keep content above pseudo-elements if any */
+    z-index: 2;
 }
 
-.hero-pre-header {
+#hero .hero-title {
+    font-size: 4rem; /* Large main title */
+    line-height: 1.2;
+    color: #fff; /* Ensure it's white if not overridden by --hero-text-color */
+    margin-bottom: 0.5rem; /* Adjusted margin */
+}
+
+#hero .hero-highlight {
+    display: block; /* Makes "Hello" appear on its own line or more distinct */
+    font-size: 0.8em; /* Slightly smaller than the name */
+    font-weight: 700; /* Can be lighter or same */
+    color: var(--primary-color); /* Use your primary color for highlight */
+    margin-bottom: 0.3em; /* Adjusted margin */
+}
+
+#hero .hero-subtitle {
+    font-size: 1.75rem;
+    font-weight: 300; /* Lighter font weight for subtitle */
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem !important;
+}
+
+#hero .hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 650px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem !important; /* Added more space before buttons */
+}
+
+#hero .hero-actions .btn {
+    padding: 0.8rem 2.5rem; /* Generous padding for buttons */
+    font-weight: 600;
+    text-transform: uppercase;
     font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px; /* More spacing like example */
-    color: var(--hero-accent-color, #FF4D4D);
-    margin-bottom: 1.25rem; /* More space */
-    display: flex;
-    align-items: center;
-}
-
-.hero-pre-header .line-accent {
-    display: inline-block;
-    width: 35px; /* Length of the line */
-    height: 2.5px;  /* Thickness of the line */
-    background-color: var(--hero-accent-color, #FF4D4D);
-    margin-right: 12px;
-}
-
-.hero-main-title {
-    font-size: 3.8rem; /* Slightly larger */
-    line-height: 1.15;
-    font-weight: 700; /* Bold title */
-    color: #fff;
-    text-transform: uppercase; /* Like example */
-    letter-spacing: 1px;
-}
-
-.hero-description-condensed {
-    font-size: 1.1rem; /* Standard lead size */
-    color: rgba(255, 255, 255, 0.75); /* Lighter for contrast */
-    max-width: 520px;
-    font-weight: 300; /* Lighter description */
-    line-height: 1.6;
-}
-
-.hero-cta-button {
-    background-color: var(--hero-accent-color, #FF4D4D);
-    border-color: var(--hero-accent-color, #FF4D4D);
-    color: #fff;
-    padding: 0.85rem 2.25rem; /* Adjust padding */
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.85rem; /* Slightly smaller button text */
     letter-spacing: 0.5px;
-    border-radius: 2px; /* Less rounded, more like example */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-    display: inline-block; /* To respect padding and margins correctly */
+    border-radius: 50px; /* Pill-shaped buttons like example */
 }
 
-.hero-cta-button:hover {
-    background-color: color-mix(in srgb, var(--hero-accent-color, #FF4D4D) 85%, black);
-    border-color: color-mix(in srgb, var(--hero-accent-color, #FF4D4D) 85%, black);
-    color: #fff;
-    transform: translateY(-2px); /* Subtle lift effect */
+#hero .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+#hero .btn-primary:hover {
+    background-color: var(--link-hover-color); /* Defined in your :root */
+    border-color: var(--link-hover-color);
 }
 
-.hero-image-column {
-    position: relative;
-    display: flex;
-    align-items: center; /* Vertically align image in its column */
-    justify-content: flex-end; /* Push image to the right if column is wider */
+#hero .btn-outline-light {
+    border-width: 2px; /* Make outline more prominent */
+    color: var(--hero-text-color, #ffffff);
+}
+#hero .btn-outline-light:hover {
+    background-color: var(--hero-text-color, #ffffff);
+    color: var(--dark-color); /* Text color changes to dark on hover */
 }
 
-.hero-profile-img {
-    max-width: 100%;
-    height: auto;
-    max-height: 85vh; /* Allow image to be quite tall */
-    object-fit: contain; /* Ensures the image is not cropped awkwardly */
-    /*
-    If your image has a transparent background and you want it to blend,
-    or if it's a dark image on a dark background, this might be fine.
-    For a B&W high-contrast look like the example:
-    filter: grayscale(1) contrast(1.1) brightness(0.95);
-    Adjust values as needed.
-    */
+#hero .hero-email {
+    margin-top: 2.5rem !important;
+}
+#hero .hero-email a {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+#hero .hero-email a:hover {
+    color: var(--hero-text-color, #ffffff);
 }
 
-/* Remove styles from previous hero design if they were targeting specific elements */
-.hero-nav-arrow,
-#hero .hero-highlight, /* Assuming this was from the centered design */
-#hero .hero-email, /* Assuming this was from the centered design */
-#hero .hero-actions /* Assuming this was from the centered design */
-{
-    display: none !important;
+/* Decorative Arrows */
+.hero-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: rgba(255, 255, 255, 0.4); /* Subtle color */
+    padding: 0.5rem 1rem;
+    z-index: 5; /* Above background, below main content if needed */
+    cursor: default; /* They are not interactive here */
+    transition: color 0.3s ease;
+}
+.hero-nav-arrow:hover {
+    color: rgba(255, 255, 255, 0.7); /* Slightly more visible on hover */
+}
+.hero-nav-left {
+    left: 20px;
+}
+.hero-nav-right {
+    right: 20px;
 }
 
 
@@ -270,99 +265,71 @@ section {
 
 
 /* ==== Media Queries for Responsiveness (Bootstrap handles most, add custom ones if needed) ==== */
-@media (max-width: 991.98px) { /* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
     :root {
         scroll-padding-top: 60px; /* Adjust for smaller navbar */
     }
     section {
         scroll-margin-top: 60px;
     }
-    #hero {
-        padding-top: 80px; /* Navbar height + some space */
-        padding-bottom: 40px;
-        text-align: center; /* Center all hero content when stacked */
+    #hero { /* Remove fixed height for hero on smaller screens, allow content to dictate */
+        min-height: auto;
+        padding-top: 120px; /* Ensure space for fixed navbar */
+        padding-bottom: 80px;
     }
-    .hero-text-column {
-        text-align: center;
-        margin-bottom: 3rem; /* More space between text and image when stacked */
-        order: 2; /* Text below image */
-        align-items: center; /* Center content within the column */
-    }
-    .hero-image-column {
-        order: 1; /* Image above text */
-        justify-content: center; /* Center image */
-        margin-bottom: 2rem;
-    }
-    .hero-pre-header {
-        justify-content: center; /* Center the line and text */
-    }
-    .hero-main-title {
+    #hero .hero-title {
         font-size: 3rem;
     }
-    .hero-description-condensed {
-        margin-left: auto;
-        margin-right: auto; /* Center the description */
-        max-width: 90%;
+    #hero .hero-subtitle {
+        font-size: 1.5rem;
     }
-    .hero-profile-img {
-        max-height: 55vh;
-        max-width: 65%;
-    }
-}
-
-@media (max-width: 767.98px) { /* Small devices (landscape phones, less than 768px) */
-    #hero {
-        min-height: auto; /* Allow height to be natural based on content */
-        padding-top: 70px;
-        padding-bottom: 50px;
-    }
-    .hero-main-title {
-        font-size: 2.6rem; /* Adjusted size */
-        letter-spacing: 0.5px;
-    }
-    .hero-pre-header {
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-    }
-    .hero-description-condensed {
+    #hero .hero-description {
         font-size: 1rem;
     }
-    .hero-profile-img {
-        max-height: 50vh;
-        max-width: 75%;
-    }
-     .hero-cta-button {
-        padding: 0.8rem 2rem;
-        font-size: 0.8rem;
+    .hero-nav-arrow { /* Make arrows smaller */
+        font-size: 2rem;
     }
 }
 
-@media (max-width: 575.98px) { /* Extra small devices (portrait phones, less than 576px) */
-    #hero {
-        padding-top: 60px;
-        padding-bottom: 40px;
+@media (max-width: 768px) {
+    #hero .hero-title {
+        font-size: 2.5rem; /* Further reduce title size */
     }
-    .hero-main-title {
+     #hero .hero-highlight {
+        font-size: 0.75em;
+    }
+    #hero .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    #hero .hero-actions .btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.85rem;
+        width: 100%; /* Stack buttons */
+        margin-bottom: 1rem !important; /* Ensure proper spacing when stacked */
+    }
+    #hero .hero-actions .btn.me-md-3 { /* Remove right margin when stacked */
+        margin-right: 0 !important;
+    }
+     .hero-nav-arrow { /* Optionally hide arrows on smaller mobile */
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    #hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    #hero .hero-title {
         font-size: 2.2rem;
     }
-     .hero-pre-header {
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
+     #hero .hero-highlight {
+        font-size: 0.7em;
     }
-     .hero-pre-header .line-accent {
-        width: 30px;
-        margin-right: 8px;
+    #hero .hero-subtitle {
+        font-size: 1.1rem;
     }
-    .hero-description-condensed {
+     #hero .hero-description {
         font-size: 0.95rem;
-        margin-bottom: 1.8rem !important;
-    }
-    .hero-profile-img {
-        max-width: 80%;
-        max-height: 45vh;
-    }
-    .hero-cta-button {
-        width: auto; /* Let button size naturally */
-        padding: 0.75rem 1.75rem;
     }
 }
