@@ -19,6 +19,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .fw-bold {
     --hero-bg-color: #343a40; /* Dark background for hero */
     --hero-text-color: #ffffff;
     --navbar-bg: rgba(33, 37, 41, 0.9); /* Slightly transparent dark navbar */
+    --navbar-scrolled-bg: var(--dark-color); /* Opaque dark navbar on scroll */
     --link-hover-color: #0a58ca; /* Slightly darker blue on hover */
 
     --bs-primary: var(--primary-color); /* Override Bootstrap primary color */
@@ -38,7 +39,7 @@ section {
 /* ==== Navbar ==== */
 .navbar {
     background-color: var(--navbar-bg);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
 }
 .navbar .navbar-brand {
     font-weight: 700;
@@ -55,6 +56,13 @@ section {
 .navbar .nav-link.active {
     color: var(--primary-color) !important; /* Use !important sparingly to override Bootstrap */
 }
+
+/* Style for navbar when scrolled */
+.navbar-scrolled {
+    background-color: var(--navbar-scrolled-bg); /* Make it fully opaque on scroll */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
 
 /* ==== Hero Section ==== */
 #hero {
@@ -160,6 +168,19 @@ section {
 .text-primary {
     color: var(--primary-color) !important;
 }
+
+/* ==== Animations (Optional) ==== */
+/* For fade-in effect on scroll (used by script.js if uncommented) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* ==== Media Queries for Responsiveness (Bootstrap handles most, add custom ones if needed) ==== */
 @media (max-width: 991.98px) {
