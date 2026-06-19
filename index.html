@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -392,7 +393,22 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Ismam Nur Swapnil. Set in Fraunces &amp; Inter Tight.</p>
-      <p class="footer-small">Last updated <span id="lastUpdated"></span></p>
+      <p class="footer-small">
+        Last updated <span id="lastUpdated"></span>
+        <span class="footer-dot">·</span>
+        <span class="footer-counter" id="footerCounter" title="Page view counter — increments on every visit">
+          <i class="fa-regular fa-eye"></i>
+          <span class="counter-label">Views</span>
+          <span class="counter-num" id="counterNum">—</span>
+        </span>
+        <!-- Off-screen ping: every page load hits counterapi.dev to register a view -->
+        <img id="counterPing"
+             src="https://api.counterapi.dev/v1/swapnil-portfolio/portfolio/up?r=1"
+             alt=""
+             width="1" height="1"
+             style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;"
+             aria-hidden="true" />
+      </p>
     </div>
   </footer>
 

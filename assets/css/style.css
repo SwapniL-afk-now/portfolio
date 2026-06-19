@@ -1169,6 +1169,36 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .footer-inner { max-width: 1100px; margin: 0 auto; }
 .footer p { font-size: 0.85rem; color: var(--ink-mute); }
 .footer-small { font-size: 0.75rem; margin-top: 6px; font-family: var(--font-mono); }
+.footer-dot { margin: 0 8px; color: var(--ink-mute); opacity: 0.5; }
+.footer-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  background: var(--surface);
+  transition: all 0.2s var(--ease);
+  cursor: default;
+}
+.footer-counter:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.footer-counter i { font-size: 0.78rem; color: var(--accent); }
+.counter-label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.62rem; }
+.counter-num {
+  font-weight: 700;
+  color: var(--ink);
+  font-feature-settings: "tnum" 1;
+  min-width: 1.4em;
+  text-align: right;
+  display: inline-block;
+}
 
 /* =========================================================
    Back to top

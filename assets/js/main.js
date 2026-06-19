@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initFilters();
   initBackTop();
+  initCounter();
 });
 
 /* =========================================================
@@ -172,13 +173,52 @@ function setYear() {
 }
 
 /* =========================================================
+   Visitor counter
+   - The hidden <img id="counterPing"> pings counterapi.dev
+     on every page load; the GET itself increments the count.
+   - We then fetch the same endpoint via XHR to read the
+     current number and render it in our own styled badge.
+   - counterapi.dev sends Access-Control-Allow-Origin: *, so
+     the XHR works from any site without a key.
+   ========================================================= */
+const COUNTER_BASE = 'https://api.counterapi.dev/v1/swapnil-portfolio/portfolio/';
+function initCounter() {
+  const numEl = document.getElementById('counterNum');
+  const ping = document.getElementById('counterPing');
+  if (!numEl) return;
+  // Bust cache so each visit is its own increment.
+  if (ping) ping.src = `${COUNTER_BASE}/up?_=${Date.now()}`;
+  // Fetch the current count.
+  fetch(`${COUNTER_BASE}`, { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => {
+      const n = data && typeof data.count === 'number' ? data.count : null;
+      if (n != null) animateCount(numEl, n);
+    })
+    .catch(() => { /* keep placeholder */ });
+}
+function animateCount(el, target) {
+  const start = parseInt(el.textContent.replace(/\D/g, ''), 10) || 0;
+  const dur = 600;
+  const t0 = performance.now();
+  function step(now) {
+    const t = Math.min(1, (now - t0) / dur);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const v = Math.round(start + (target - start) * eased);
+    el.textContent = v.toLocaleString();
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* =========================================================
    Theme
    ========================================================= */
 function initTheme() {
   const btn = document.getElementById('themeToggle');
+  // Default is always light. Only respect localStorage if the user has explicitly chosen a theme.
   const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initial = stored || (prefersDark ? 'dark' : 'light');
+  const initial = stored === 'dark' || stored === 'light' ? stored : 'light';
   applyTheme(initial);
   btn.addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme');
