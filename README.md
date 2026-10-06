@@ -18,7 +18,7 @@ Open http://localhost:8000/.
 - `experience/index.html`: education, professional experience, research collaborations, and honors.
 - `assets/js/main.js`: paper, project, and milestone content; native navigation and theme controls.
 - `assets/css/style.css`: shared typography, layout, and responsive styling.
-- `assets/img/photo.jpg` and `assets/files/CV.pdf`: portrait and current academic CV.
+- `assets/img/profile.png` and `assets/files/CV.pdf`: portrait and current academic CV.
 
 Keep roles and publication status accurate. Publication entries use compact bibliographic formatting, with native expandable abstracts. Links from the previous single-page layout redirect to the corresponding pages.
 
