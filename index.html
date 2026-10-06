@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#faf9f6" />
   <title>Ismam Nur Swapnil — Machine Learning Researcher</title>
-  <meta name="description" content="Ismam Nur Swapnil studies reinforcement learning, world models, visual reasoning, and on-policy distillation, with a focus on data and compute efficiency." />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="description" content="Ismam Nur Swapnil researches efficient learning for language and vision-language reasoning. Selected papers, research contributions, software, and ongoing interests." />
+  <link rel="stylesheet" href="assets/css/style.css?v=20261006-research" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -14,9 +14,9 @@
     <nav class="nav" aria-label="Main navigation">
       <a class="nav-name" href="#about">Ismam Nur Swapnil</a>
       <div class="nav-links">
-        <a href="#research">Research</a>
-        <a href="#timeline">Milestones</a>
         <a href="#publications">Papers</a>
+        <a href="#research">Directions</a>
+        <a href="#timeline">Milestones</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a class="nav-cv" href="assets/files/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
@@ -29,9 +29,10 @@
       <div class="profile-copy">
         <p class="eyebrow">Machine learning engineer &amp; researcher</p>
         <h1 id="name">Ismam Nur Swapnil</h1>
-        <p class="intro-lead">I study how agents can learn, perceive, and reason with less data and computation.</p>
-        <p>I’m a Machine Learning Engineer in the Department of MIS at <a href="https://www.aci-bd.com/" rel="noopener">Advanced Chemical Industries Limited (ACI)</a>, where I work on Bangla OCR for handwritten and printed documents and Bangla text-to-speech. I collaborate with <a href="https://www.cs.ucf.edu/" rel="noopener">Prof. Ser-Nam Lim</a> at the University of Central Florida on efficient policy optimization for language-model reasoning, and with Md Mofijul Islam at Amazon GenAI on on-policy self-distillation.</p>
-        <p>I earned a B.Sc. in Electrical &amp; Electronic Engineering from <a href="https://www.buet.ac.bd/" rel="noopener">BUET</a> in 2025. My thesis studied AI-driven dermatological diagnosis with vision-language models, SFT, QLoRA, and DPO. I’m exploring PhD opportunities in machine learning.</p>
+        <p class="intro-lead">I research efficient learning for language and vision-language reasoning.</p>
+        <p>My work focuses on policy optimization and on-policy self-distillation. I’m a Machine Learning Engineer at <a href="https://www.aci-bd.com/" rel="noopener">ACI</a> and a 2025 B.Sc. graduate in Electrical &amp; Electronic Engineering from <a href="https://www.buet.ac.bd/" rel="noopener">BUET</a>.</p>
+        <p>I’m exploring PhD opportunities in reinforcement learning and multimodal reasoning.</p>
+        <p class="profile-actions"><a href="#publications">Read my research ↓</a> <a href="assets/files/CV.pdf" target="_blank" rel="noopener">Academic CV ↗</a></p>
       </div>
       <aside class="profile-side">
         <img class="portrait" src="assets/img/photo.jpg" alt="Ismam Nur Swapnil" />
@@ -45,37 +46,34 @@
           </div>
         </div>
       </aside>
-      <div class="interests">
-        <p class="eyebrow">Research interests</p>
-        <ul>
-          <li>Reinforcement learning</li>
-          <li>World models</li>
-          <li>Visual reasoning</li>
-          <li>On-policy distillation</li>
-        </ul>
+    </section>
+
+    <section class="section" id="publications" aria-labelledby="publications-title">
+      <div class="section-heading section-heading-row">
+        <div><p class="eyebrow">Selected research</p><h2 id="publications-title">Papers &amp; contributions</h2></div>
+        <a class="text-link" href="https://scholar.google.com/citations?user=LI4qsPMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
       </div>
+      <p class="section-intro publication-note">The papers below are preprints; submission and review status is listed with each entry. Results describe the evaluations reported in the linked papers.</p>
+      <ol class="pub-list" id="pubList"></ol>
     </section>
 
     <section class="section" id="research" aria-labelledby="research-title">
       <div class="section-heading">
-        <p class="eyebrow">Research</p>
-        <h2 id="research-title">Learning from better signals</h2>
-        <p class="section-intro">My research spans reinforcement learning, world models, visual reasoning, and on-policy distillation, with data and compute efficiency as a shared goal.</p>
+        <p class="eyebrow">Research directions</p>
+        <h2 id="research-title">Questions I want to pursue</h2>
+        <p class="section-intro">My work on optimization and distillation motivates two questions for future research.</p>
       </div>
       <div class="research-list">
         <article class="research-item">
           <span class="item-index">01</span>
-          <div><h3>Efficient policy optimization for reasoning</h3><p>With Prof. Ser-Nam Lim at UCF, I study efficient policy optimization for language-model reasoning. My first-author work <a href="#pub-prepo">PrePO</a> extrapolates from observed same-batch updates; <a href="#pub-grpopp">GRPO++</a> stabilizes GRPO for data-scarce medical VLMs.</p></div>
+          <div><h3>When can we safely skip optimization work?</h3><p><a href="#pub-prepo">PrePO</a> studies prediction within repeated updates on a fixed batch. I’m interested in how prediction reliability and correction should adapt as training dynamics change.</p></div>
         </article>
         <article class="research-item">
           <span class="item-index">02</span>
-          <div><h3>On-policy distillation for reasoning</h3><p>With Md Mofijul Islam at Amazon GenAI, I co-developed <a href="#pub-opasd">OPASD</a>, which adds solution-conditioned attention supervision to on-policy self-distillation.</p></div>
-        </article>
-        <article class="research-item">
-          <span class="item-index">03</span>
-          <div><h3>World models and visual reasoning</h3><p>My independent research explores world models for reinforcement learning and sampling and inference-time scaling for language-model reasoning. Earlier work includes dermatological visual reasoning systems such as <a href="#pub-clarify">CLARIFY</a>.</p></div>
+          <div><h3>Which learning signals make reasoning more efficient?</h3><p><a href="#pub-opasd">OPASD</a> transfers attention alongside token predictions; <a href="#pub-grpopp">GRPO++</a> studies policy optimization with scarce medical data. I’m interested in how supervision and sampling affect the cost of learning useful reasoning.</p></div>
         </article>
       </div>
+      <p class="ongoing-interests"><strong>Ongoing interests.</strong> I’m also exploring world models for reinforcement learning and inference-time scaling for language-model reasoning.</p>
     </section>
 
     <section class="section section-quiet" id="timeline" aria-labelledby="milestones-title">
@@ -86,28 +84,19 @@
       <div class="timeline" id="timelineEl"></div>
     </section>
 
-    <section class="section" id="publications" aria-labelledby="publications-title">
-      <div class="section-heading section-heading-row">
-        <div><p class="eyebrow">Selected work</p><h2 id="publications-title">Publications &amp; preprints</h2></div>
-        <a class="text-link" href="https://scholar.google.com/citations?user=LI4qsPMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
-      </div>
-      <ol class="pub-list" id="pubList"></ol>
-    </section>
-
     <section class="section" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading"><p class="eyebrow">Experience</p><h2 id="experience-title">Where I work</h2></div>
+      <div class="section-heading"><p class="eyebrow">Experience</p><h2 id="experience-title">Experience &amp; collaborations</h2></div>
       <div class="experience-list">
-        <article class="experience-item"><p class="item-date">2026</p><div><h3>Research Collaborator, On-Policy Self-Distillation</h3><p>Collaboration with Md Mofijul Islam, Amazon GenAI · Remote · Co-developed OPASD</p></div></article>
-        <article class="experience-item"><p class="item-date">Nov 2025 — Present</p><div><h3>Research Collaborator</h3><p><a href="https://www.ucf.edu/" rel="noopener">University of Central Florida</a> · Remote · Efficient policy optimization for language-model reasoning with Prof. Ser-Nam Lim</p></div></article>
-        <article class="experience-item"><p class="item-date">Jun 2025 — Present</p><div><h3>Machine Learning Engineer</h3><p><a href="https://www.aci-bd.com/" rel="noopener">Advanced Chemical Industries Limited (ACI)</a> · Department of MIS · Dhaka, Bangladesh</p></div></article>
-        <article class="experience-item"><p class="item-date">Feb 2025 — Present</p><div><h3>Independent Research</h3><p>World models for reinforcement learning; on-policy distillation, sampling strategies, and inference-time scaling for language-model reasoning</p></div></article>
-        <article class="experience-item"><p class="item-date">Feb 2024 — Feb 2025</p><div><h3>Undergraduate Researcher</h3><p>Bangladesh University of Engineering and Technology · Dermatological VLMs, GRPO++, and CLARIFY</p></div></article>
+        <article class="experience-item"><p class="item-date">2026</p><div><h3>On-policy distillation collaboration</h3><p>With Md Mofijul Islam of Amazon GenAI · Remote · On-policy attention self-distillation (OPASD)</p></div></article>
+        <article class="experience-item"><p class="item-date">Nov 2025 — Present</p><div><h3>Policy optimization collaboration</h3><p>With Prof. Ser-Nam Lim of the University of Central Florida · Remote · Predictive policy optimization (PrePO)</p></div></article>
+        <article class="experience-item"><p class="item-date">Jun 2025 — Present</p><div><h3>Machine Learning Engineer</h3><p><a href="https://www.aci-bd.com/" rel="noopener">Advanced Chemical Industries Limited (ACI)</a> · Department of MIS · Bangla OCR, text-to-speech, and agricultural research tools</p></div></article>
+        <article class="experience-item"><p class="item-date">Feb 2024 — Feb 2025</p><div><h3>Undergraduate Researcher</h3><p>Bangladesh University of Engineering and Technology · Thesis on dermatological diagnosis using vision-language models</p></div></article>
       </div>
     </section>
 
     <section class="section section-quiet" id="projects" aria-labelledby="projects-title">
       <div class="section-heading section-heading-row">
-        <div><p class="eyebrow">Selected code</p><h2 id="projects-title">Projects</h2></div>
+        <div><p class="eyebrow">Software</p><h2 id="projects-title">Research &amp; applied projects</h2></div>
         <a class="text-link" href="https://github.com/SwapniL-afk-now" target="_blank" rel="noopener">More on GitHub <span aria-hidden="true">↗</span></a>
       </div>
       <div class="projects-list" id="projectsGrid"></div>
@@ -116,12 +105,12 @@
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <p class="eyebrow">Get in touch</p>
       <h2 id="contact-title">Let’s talk research.</h2>
-      <p>I’m interested in PhD opportunities and collaborations in reinforcement learning and multimodal reasoning.</p>
+      <p>I’m exploring PhD opportunities in efficient policy optimization, distillation, and multimodal reasoning. Please email me to discuss research fit or a collaboration.</p>
       <a class="contact-email" href="mailto:ismamnurswapnil@gmail.com">ismamnurswapnil@gmail.com <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
   <footer class="site-footer"><span>© <span id="year"></span> Ismam Nur Swapnil</span><span>Dhaka, Bangladesh</span><a href="#about">Back to top ↑</a></footer>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20261006-research"></script>
 </body>
 </html>

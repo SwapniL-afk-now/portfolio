@@ -21,6 +21,10 @@ Then visit <http://localhost:8000>.
 
 Publication abstracts use the browser’s built-in disclosure control. The page has no analytics, visitor counter, or client-side storage.
 
+The page leads with papers, documented personal contributions, and evaluation context. Research directions distinguish future questions from completed work. Collaborator affiliations describe the collaborators, rather than implying institutional employment. Earlier milestones and applied projects remain available in native disclosure controls.
+
+Use the current CV for personal roles and contributions, and the linked papers for methods and results. Keep preprint and review status explicit. Add paper implementation links only after confirming that the repository documents the corresponding method; related prototypes are listed separately under software.
+
 ## Deploy
 
 Push the repository to GitHub and enable Pages for the `main` branch, using the repository root as the publishing source.
