@@ -1,30 +1,29 @@
-# Ismam Nur Swapnil — Portfolio
+# Ismam Nur Swapnil — Academic Portfolio
 
-A responsive academic portfolio for research, publications, projects, and experience. It is a static GitHub Pages site with no build step, framework, or external runtime dependency.
+A static academic portfolio styled after Aranya Saha’s al-folio website. It uses a white background, Roboto typography, blue links, a circular portrait, and separate About, Publications, Research, and Experience pages. No build step or framework is required.
 
-## Preview locally
-
-Open `index.html` directly, or serve this folder so the CV and image load over HTTP:
+## Preview
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit <http://localhost:8000>.
+Open http://localhost:8000/.
 
-## Update content
+## Content
 
-- Profile, research topics, experience, contact details, and section order are in `index.html`.
-- Publications, projects, and Recent milestones are in the `DATA` object at the top of `assets/js/main.js`.
-- The profile photo is `assets/img/photo.jpg`; the CV is `assets/files/CV.pdf`.
-- Colors, typography, spacing, and responsive layouts are in `assets/css/style.css`.
+- `index.html`: biography, interests, education, contact, and Recent milestones.
+- `publications/index.html`: publication bibliography.
+- `research/index.html`: research interests, thesis, and all six projects.
+- `experience/index.html`: education, professional experience, research collaborations, and honors.
+- `assets/js/main.js`: paper, project, and milestone content; native navigation and theme controls.
+- `assets/css/style.css`: shared typography, layout, and responsive styling.
+- `assets/img/photo.jpg` and `assets/files/CV.pdf`: portrait and current academic CV.
 
-Publication abstracts use the browser’s built-in disclosure control. The page has no analytics, visitor counter, or client-side storage.
+Keep roles and publication status accurate. Publication entries use compact bibliographic formatting, with native expandable abstracts. Links from the previous single-page layout redirect to the corresponding pages.
 
-The page leads with papers, documented personal contributions, and evaluation context. Research directions distinguish future questions from completed work. Collaborator affiliations describe the collaborators, rather than implying institutional employment. Earlier milestones and applied projects remain available in native disclosure controls.
+Roboto is served locally under the SIL Open Font License in `assets/fonts/OFL.txt`. Theme preference is stored locally in the browser. There are no analytics or external runtime dependencies.
 
-Use the current CV for personal roles and contributions, and the linked papers for methods and results. Keep preprint and review status explicit. Add paper implementation links only after confirming that the repository documents the corresponding method; related prototypes are listed separately under software.
+## Deployment
 
-## Deploy
-
-Push the repository to GitHub and enable Pages for the `main` branch, using the repository root as the publishing source.
+GitHub Pages serves `main` from the repository root. All internal links are relative and work under `/portfolio/`.

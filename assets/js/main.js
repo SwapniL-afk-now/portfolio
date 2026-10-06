@@ -1,16 +1,16 @@
-/* Content: supplied academic CV, linked papers, and repository documentation. */
+/* Portfolio content from the current CV, papers, and project documentation. */
 const DATA = {
   "publications": [
     {
       "id": "prepo",
       "title": "Skip What You Can Predict: Predictive Repositioning for Policy Optimization for Efficient LLM Training",
       "authors": [
-        "<b>I. N. Swapnil</b>",
-        "A. Saha",
-        "T. Zahra",
-        "T. A. Khan",
-        "M. A. Haque",
-        "S.-N. Lim"
+        "<span class=\"self-author\">Ismam Nur Swapnil</span>",
+        "Aranya Saha",
+        "Tasneea Zahra",
+        "Tanvir Ahmed Khan",
+        "Mohammad Ariful Haque",
+        "Ser-Nam Lim"
       ],
       "venue": "Preprint · Submitted to ICLR 2027",
       "yearDisplay": "2026",
@@ -19,21 +19,18 @@ const DATA = {
         "pdf": "https://arxiv.org/pdf/2605.06755",
         "html": "https://arxiv.org/html/2605.06755"
       },
-      "abstract": "PrePO approximates repeated same-batch optimizer updates by extrapolating from two observed steps to a farther point on the trajectory, then correcting at a fixed active cost. It reaches matched performance in fewer explicit steps and less wall-clock time. The paper gives finite-horizon error bounds for AdamW and Muon and evaluates the method on reinforcement learning with verifiable rewards and supervised fine-tuning.",
-      "summary": "Predicts a farther point on a same-batch optimization trajectory from two probe updates, then repositions and corrects instead of executing every intermediate step.",
-      "contribution": "First author. Developed predictive repositioning, established finite-horizon error bounds for AdamW and Muon, and validated the method in RL with verifiable rewards and supervised fine-tuning.",
-      "evidence": "The paper reports fewer explicit optimization steps and lower wall-clock time to matched performance targets than the corresponding RLVR baselines."
+      "abstract": "PrePO approximates repeated same-batch optimizer updates by extrapolating from two observed steps to a farther point on the trajectory, then correcting at a fixed active cost. It reaches matched performance in fewer explicit steps and less wall-clock time. The paper gives finite-horizon error bounds for AdamW and Muon and evaluates the method on reinforcement learning with verifiable rewards and supervised fine-tuning."
     },
     {
       "id": "opasd",
       "title": "Teach Yourself Where to Look: On-Policy Attention Self-Distillation for Reasoning",
       "authors": [
-        "S. H. Arib",
-        "R. Akter",
-        "<b>I. N. Swapnil</b>",
-        "Md. F. A. Sayeedi",
-        "T. Mohiuddin*",
-        "Md. M. Islam*"
+        "Safaeid Hossain Arib",
+        "Rabeya Akter",
+        "<span class=\"self-author\">Ismam Nur Swapnil</span>",
+        "Md. Faiyaz Abdullah Sayeedi",
+        "Tasnim Mohiuddin*",
+        "Md Mofijul Islam*"
       ],
       "venue": "Preprint · Submitted to ICLR 2027 · *Equal supervision",
       "yearDisplay": "2026",
@@ -42,19 +39,16 @@ const DATA = {
         "pdf": "https://arxiv.org/pdf/2609.33200",
         "html": "https://arxiv.org/html/2609.33200"
       },
-      "abstract": "OPASD complements token-level on-policy self-distillation with solution-conditioned attention supervision. Teacher attention is projected onto student-visible positions and renormalized before alignment. In the reported comparisons with token-only OPSD, OPASD reduces generated rollout tokens by 73.9% and estimated model compute by 72.6%, while training 1.53× faster. These findings apply to the model sizes, tasks, and training settings evaluated in the paper.",
-      "summary": "Transfers where a solution-informed teacher attends, alongside its token predictions, by projecting attention onto context available to the student.",
-      "contribution": "Co-author. Co-developed on-policy attention self-distillation with the author team.",
-      "evidence": "Across Qwen3 models (1.7B–8B) and four competition-level math benchmarks, the paper reports 4.98–8.40 percentage-point gains in average accuracy over token-only OPSD."
+      "abstract": "OPASD complements token-level on-policy self-distillation with solution-conditioned attention supervision. Teacher attention is projected onto student-visible positions and renormalized before alignment. In the reported comparisons with token-only OPSD, OPASD reduces generated rollout tokens by 73.9% and estimated model compute by 72.6%, while training 1.53× faster. These findings apply to the model sizes, tasks, and training settings evaluated in the paper."
     },
     {
       "id": "grpopp",
       "title": "GRPO++: Enhancing Dermatological Reasoning under Low Resource Settings",
       "authors": [
-        "<b>I. N. Swapnil</b>",
-        "A. Saha",
-        "T. A. Khan",
-        "M. A. Haque"
+        "<span class=\"self-author\">Ismam Nur Swapnil</span>",
+        "Aranya Saha",
+        "Tanvir Ahmed Khan",
+        "Mohammad Ariful Haque"
       ],
       "venue": "Preprint · Under review at IEEE Journal of Biomedical and Health Informatics",
       "yearDisplay": "2025",
@@ -64,19 +58,16 @@ const DATA = {
         "html": "https://arxiv.org/html/2510.01236",
         "dataset": "https://www.kaggle.com/dsv/13076764"
       },
-      "abstract": "GRPO++ stabilizes data-hungry GRPO for low-resource medical vision-language models. In the three-stage pipeline, GRPO++ supports diagnostic reasoning, supervised fine-tuning adds conversational ability, and knowledge-graph-based DPO reduces factual errors.",
-      "summary": "Combines stabilized policy optimization, supervised fine-tuning, and knowledge-graph-based preference alignment for dermatological reasoning with limited data.",
-      "contribution": "First author. Developed GRPO++ within the three-stage dermatological VLM training pipeline.",
-      "evidence": "Evaluated on a curated dermatology dataset against standard fine-tuning approaches. Evaluation is limited to the paper’s curated research dataset."
+      "abstract": "GRPO++ stabilizes data-hungry GRPO for low-resource medical vision-language models. In the three-stage pipeline, GRPO++ supports diagnostic reasoning, supervised fine-tuning adds conversational ability, and knowledge-graph-based DPO reduces factual errors."
     },
     {
       "id": "clarify",
       "title": "CLARIFY: A Specialist-Generalist Framework for Accurate and Lightweight Dermatological Visual Question Answering",
       "authors": [
-        "A. Saha",
-        "T. A. Khan",
-        "<b>I. N. Swapnil</b>",
-        "M. A. Haque"
+        "Aranya Saha",
+        "Tanvir Ahmed Khan",
+        "<span class=\"self-author\">Ismam Nur Swapnil</span>",
+        "Mohammad Ariful Haque"
       ],
       "venue": "Preprint",
       "yearDisplay": "2025",
@@ -86,10 +77,7 @@ const DATA = {
         "html": "https://arxiv.org/html/2508.18430",
         "dataset": "https://www.kaggle.com/dsv/12845315"
       },
-      "abstract": "CLARIFY combines a domain-trained specialist classifier, a compressed conversational VLM, and knowledge-graph retrieval. The paper reports an 18% improvement in diagnostic accuracy over its strongest baseline, a fine-tuned uncompressed VLM, on a curated multimodal dermatology dataset, alongside at least 20% lower average VRAM use and 5% lower latency. The reported gains apply to the paper’s experimental dataset and baselines.",
-      "summary": "Uses a specialist image classifier to guide a compressed conversational VLM, with knowledge-graph retrieval for dermatological question answering.",
-      "contribution": "Co-author. Contributed to the design of the specialist–generalist architecture for dermatological VQA.",
-      "evidence": "On the paper’s curated dermatology dataset, the framework improves diagnostic accuracy over a fine-tuned uncompressed VLM and reduces average VRAM use by at least 20%."
+      "abstract": "CLARIFY combines a domain-trained specialist classifier, a compressed conversational VLM, and knowledge-graph retrieval. The paper reports an 18% improvement in diagnostic accuracy over its strongest baseline, a fine-tuned uncompressed VLM, on a curated multimodal dermatology dataset, alongside at least 20% lower average VRAM use and 5% lower latency. The reported gains apply to the paper’s experimental dataset and baselines."
     }
   ],
   "projects": [
@@ -217,53 +205,63 @@ const DATA = {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('year').textContent = new Date().getFullYear();
-  renderPubs();
-  renderProjects();
-  renderTimeline();
+  if (document.getElementById('pubList')) renderPubs();
+  if (document.getElementById('projectsGrid')) renderProjects();
+  if (document.getElementById('timelineEl')) renderTimeline();
+
+  const menu = document.querySelector('.nav-menu');
+  const desktop = window.matchMedia('(min-width: 576px)');
+  const syncMenu = () => { menu.open = desktop.matches; };
+  syncMenu();
+  desktop.addEventListener('change', syncMenu);
+
+  const toggle = document.querySelector('.theme-toggle');
+  const setTheme = dark => {
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    toggle.setAttribute('aria-pressed', String(dark));
+    toggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+  };
+  try { setTheme(localStorage.getItem('portfolio-theme') === 'dark'); } catch { setTheme(false); }
+  toggle.addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme !== 'dark';
+    setTheme(dark);
+    try { localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light'); } catch {}
+  });
+
+  // Preserve links to sections from the previous single-page layout.
+  if (document.getElementById('about')) {
+    const routeLegacyHash = () => {
+      const hash = location.hash;
+      const routes = { '#publications': 'publications/', '#research': 'research/', '#projects': 'research/#projects', '#experience': 'experience/' };
+      const destination = hash.startsWith('#pub-') ? 'publications/' + hash : routes[hash];
+      if (destination) location.replace(destination);
+    };
+    routeLegacyHash();
+    window.addEventListener('hashchange', routeLegacyHash);
+  }
 });
 
 function renderPubs() {
-  document.getElementById('pubList').innerHTML = DATA.publications.map(pub => {
-    const links = Object.entries(pub.links)
-      .filter(([, url]) => url && url !== '#')
-      .map(([kind, url]) => {
-        const label = { arxiv: 'arXiv', pdf: 'PDF', html: 'Methods & experiments', dataset: 'Dataset', code: 'Code', site: 'Project' }[kind] || kind;
-        return `<a class="pub-link" href="${url}" target="_blank" rel="noopener">${label} ↗</a>`;
+  const years = [...new Set(DATA.publications.map(pub => pub.yearDisplay))];
+  document.getElementById('pubList').innerHTML = years.map(year =>
+    `<section class="publication-year"><h2 class="year-label">${year}</h2><ol class="pub-list">${DATA.publications.filter(pub => pub.yearDisplay === year).map(pub => {
+      const links = Object.entries(pub.links).filter(([, url]) => url && url !== '#').map(([kind, url]) => {
+        const label = { arxiv: 'arXiv', pdf: 'PDF', html: 'HTML', dataset: 'Data', code: 'Code', site: 'Project' }[kind] || kind;
+        return `<a class="pub-link" href="${url}" target="_blank" rel="noopener">${label}</a>`;
       }).join('');
-    return `<li class="pub-item" id="pub-${pub.id}">
-      <div class="pub-head"><span class="pub-year">${pub.yearDisplay}</span><h3 class="pub-title">${pub.title}</h3></div>
-      <p class="pub-authors">${pub.authors.join(', ')}</p>
-      <p class="pub-venue">${pub.venue}</p>
-      <p class="pub-summary">${pub.summary}</p>
-      <p class="pub-contribution"><strong>My contribution.</strong> ${pub.contribution}</p>
-      <p class="pub-evidence"><strong>Evidence.</strong> ${pub.evidence}</p>
-      <div class="pub-links">${links}</div>
-      <details class="pub-abstract"><summary>More about the method & evaluation</summary><p>${pub.abstract}</p></details>
-    </li>`;
-  }).join('');
+      return `<li class="pub-item" id="pub-${pub.id}"><h3 class="pub-title">${pub.title}</h3><p class="pub-authors">${pub.authors.join(', ')}</p><p>${pub.yearDisplay}</p><p class="pub-venue">${pub.venue}</p><div class="pub-links">${links}<details class="pub-abstract"><summary aria-label="Abstract">ABS</summary><p>${pub.abstract}</p></details></div></li>`;
+    }).join('')}</ol></section>`
+  ).join('');
 }
 
 function renderProjects() {
-  const projects = DATA.projects.map(project => {
-    const tags = project.tags.map(tag => `<span>${tag}</span>`).join('');
-    const code = project.links.code
-      ? `<a class="proj-cta" href="${project.links.code}" target="_blank" rel="noopener">GitHub ↗</a>`
-      : '';
-    return `<article class="project-card">
-      <div><h3 class="proj-title">${project.title}</h3><p class="proj-category">${project.category}</p></div>
-      <p class="proj-desc">${project.desc}</p>
-      <div class="proj-tags">${tags}</div>
-      <div class="proj-foot">${code}</div>
-    </article>`;
-  });
-  document.getElementById('projectsGrid').innerHTML = projects.slice(0, 2).join('') +
-    `<details class="archive-details"><summary>Applied projects · OCR, retrieval & voice</summary>${projects.slice(2).join('')}</details>`;
+  document.getElementById('projectsGrid').innerHTML = DATA.projects.map(project =>
+    `<article class="project"><h3><a href="${project.links.code}" target="_blank" rel="noopener">${project.title}</a></h3><p>${project.desc}</p></article>`
+  ).join('');
 }
 
 function renderTimeline() {
-  const news = DATA.news.map(item =>
-    `<article class="tl-item"><time class="tl-date">${item.date}</time><div class="tl-text">${item.text}</div></article>`
-  );
-  document.getElementById('timelineEl').innerHTML = news.slice(0, 3).join('') +
-    `<details class="archive-details"><summary>Earlier milestones · 2024–2025</summary>${news.slice(3).join('')}</details>`;
+  document.getElementById('timelineEl').innerHTML = `<table class="news-table"><tbody>${DATA.news.map(item =>
+    `<tr><th scope="row">${item.date}</th><td>${item.text}</td></tr>`
+  ).join('')}</tbody></table>`;
 }
