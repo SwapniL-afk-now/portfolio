@@ -42,7 +42,7 @@ li { margin-bottom: 6px; }
 .theme-toggle svg { width: 18px; height: 18px; fill: currentColor; }
 .page { flex: 1; padding-top: 48px; padding-bottom: 60px; }
 .page-heading { margin-bottom: 36px; }
-.portrait { float: right; width: 300px; height: 300px; margin: 8px 12px 24px 48px; border-radius: 50%; object-fit: cover; object-position: center 25%; box-shadow: 0 8px 18px #0003; }
+.portrait { float: right; width: 300px; height: 300px; margin: 8px 12px 24px 48px; border-radius: 50%; object-fit: cover; object-position: center 65%; box-shadow: 0 8px 18px #0003; }
 .profile-heading { margin-bottom: 28px; }
 .subtitle { margin-bottom: 0; }
 .bio p { margin-bottom: 30px; }
